@@ -1,5 +1,7 @@
 <?php
-include("Projet/Donnees.inc.php");
+//include("Projet/Donnees.inc.php");
+include_once __DIR__ . "/../config/config.php";
+include_once DATA_PATH;
 $name = $_GET['name'];
 
 function areStringSimilar($str1, $str2) {
@@ -20,7 +22,7 @@ function areStringSimilar($str1, $str2) {
       }
       if (areStringSimilar($name, $Recette['titre'])) {
           $encode = urlencode($Recette['titre']);
-          echo('<div class="result-item"><a target="htmz" onClick="clearInput()" href="recette.php?name=' . $encode . '#target">' . $Recette['titre'] . '</a></div>');
+          echo('<div class="result-item"><a target="htmz" onClick="clearInput()" href="recette/recette.php?name=' . $encode . '#target">' . $Recette['titre'] . '</a></div>');
           $count += 1;
       }
   }

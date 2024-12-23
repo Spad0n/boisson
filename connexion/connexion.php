@@ -13,7 +13,7 @@
 
     <h2>Veuillez fournir vos informations</h2>
 
-    <form action="verifconnexion.php" method="POST">
+    <form action="verification/verifconnexion.php" method="POST">
         <label for="login">Login :</label>
         <input type="text" id="login" name="login" required><br><br>
 

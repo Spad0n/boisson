@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <div id="target">
   <?php
-  include("Projet/Donnees.inc.php");
+  //include("Projet/Donnees.inc.php");
+  include_once __DIR__ . "/../config/config.php";
+  include_once DATA_PATH;
   $name = $_GET['name'];
   $categorie = $Hierarchie[$name];
 
@@ -26,7 +28,7 @@
       $strings = "<div>";
       foreach ($collections as $element) {
           $encode = urlencode($element);
-          $strings .= '<a target="htmz" href="categories.php?name=' . $encode . '#target">' . $element . '</a>';
+          $strings .= '<a target="htmz" href="categories/categories.php?name=' . $encode . '#target">' . $element . '</a>';
           $strings .= '/';
       }
       echo($strings . $name . "</div>");
@@ -39,7 +41,7 @@
       foreach ($categorie['sous-categorie'] as $sub_categorie) {
           $encode = urlencode($sub_categorie);
           echo('<li>');
-          echo('<a target="htmz" href="categories.php?name=' . $encode . '#target">' . $sub_categorie . '</a>');
+          echo('<a target="htmz" href="categories/categories.php?name=' . $encode . '#target">' . $sub_categorie . '</a>');
           echo('</li>');
       }
       echo("</ul>");
@@ -50,7 +52,7 @@
       echo("<ul>");
       foreach ($recette_result as $result) {
           $encode = urlencode($result['titre']);
-          echo('<li><a target="htmz" href="recette.php?name=' . $encode . '#target">' . $result['titre'] . '</a></li>');
+          echo('<li><a target="htmz" href="recette/recette.php?name=' . $encode . '#target">' . $result['titre'] . '</a></li>');
       }
       echo("</ul>");
   }

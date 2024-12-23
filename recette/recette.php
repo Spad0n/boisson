@@ -1,5 +1,7 @@
 <?php
-include("Projet/Donnees.inc.php");
+//include("Projet/Donnees.inc.php");
+include_once __DIR__ . "/../config/config.php";
+include_once DATA_PATH;
 if (isset($_GET['name'])) {
     $result = null;
     foreach ($Recettes as $Recette) {
@@ -11,7 +13,7 @@ if (isset($_GET['name'])) {
     $ingredients = explode('|', $result['ingredients']);
 }
 
-$images = scandir("Projet/Photos");
+$images = scandir(BASE_PATH . "/Projet/Photos");
 unset($images[0]);
 unset($images[1]);
 $dict = array();
@@ -51,7 +53,7 @@ foreach ($images as $image) {
     $strings = "";
     foreach ($result['index'] as $categorie) {
         $encode = urlencode($categorie);
-        $strings .= '<a target="htmz" onClick="clearInput()" href="categories.php?name=' . $encode . '#target">' . $categorie . '</a>';
+        $strings .= '<a target="htmz" onClick="clearInput()" href="categories/categories.php?name=' . $encode . '#target">' . $categorie . '</a>';
         $strings .= ' · ';
     }
     echo(substr($strings, 0, -3));

@@ -48,7 +48,7 @@ input.addEventListener('input', (event) => {
     typingTimeout = setTimeout(() => {
         if (input.value !== "") {
             const encode = encodeURIComponent(input.value);
-            iframe.src = "search.php?name=" + encode + "#result-container";
+            iframe.src = "search/search.php?name=" + encode + "#result-container";
         }
     }, 300);
     //suggestions.style.display = 'block';

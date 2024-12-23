@@ -23,13 +23,13 @@
           </button>
         <!-- </form> -->
       </div>
-      <a style="color: #eee; padding: 10px;" href="inscription.php">inscription</a>
-      <a style="color: #eee;" href="connexion.php">connexion</a>
+      <a style="color: #eee; padding: 10px;" href="inscription/inscription.php">inscription</a>
+      <a style="color: #eee;" href="connexion/connexion.php">connexion</a>
     </nav>
     <article>
       <?php
       $_GET['name'] = 'Aliment';
-      include("categories.php");
+      include("categories/categories.php");
       ?>
     </article>
     <iframe hidden name="htmz" id="htmzIframe"></iframe>
